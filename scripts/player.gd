@@ -25,10 +25,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func _draw():
-	# Draw a circle at the player's center for debug
-	draw_circle(Vector2.ZERO, 10.0, Color.RED)
-	
-	# Example: Draw a line representing your velocity vector
+	# Draw a line representing your velocity vector
 	draw_line(Vector2.ZERO, velocity * 0.1, Color.GREEN, 2.0)
 
 func _process(delta):
