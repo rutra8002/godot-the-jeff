@@ -33,8 +33,8 @@ scale = Vector2(0.156, 0.156)
 texture = ExtResource("2_rwgxs")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=555016262]
-position = Vector2(600, 600)
-rotation = 0.15009831
+position = Vector2(600, 567)
+rotation = 0.34906584
 scale = Vector2(670, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1668108316]
