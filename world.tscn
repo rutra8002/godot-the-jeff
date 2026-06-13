@@ -5,4 +5,5 @@
 [node name="World" type="Node2D" unique_id=224962715]
 
 [node name="Player" parent="." unique_id=426722866 instance=ExtResource("1_f3sb7")]
-position = Vector2(626, -89.00001)
+position = Vector2(384, 308)
+scale = Vector2(2, 2)
