@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="godot the jeff"
-run/main_scene="uid://b2ghi742m25q0"
+run/main_scene="uid://c22d7x2iyhn38"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

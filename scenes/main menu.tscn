@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c22d7x2iyhn38"]
+
+[ext_resource type="Script" uid="uid://chfgw6kwkccoq" path="res://scripts/main_menu.gd" id="1_5hgee"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5hgee"]
+font_size = 67
+
+[node name="MainMenu" type="Control" unique_id=1669015999]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5hgee")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=652618160]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -33.0
+offset_right = 21.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1139263412]
+layout_mode = 2
+text = "Jeff The Grappler"
+label_settings = SubResource("LabelSettings_5hgee")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=11356214]
+layout_mode = 2
+text = "Godot Edition"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=1714184491]
+layout_mode = 2
+text = "Play"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1543494937]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
