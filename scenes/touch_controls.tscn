@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://beep8ymejq0me"]
+
+[ext_resource type="Texture2D" uid="uid://bkp4xovxixr4j" path="res://icon.svg" id="1_6wx45"]
+
+[node name="TouchControls" type="CanvasLayer" unique_id=1234611365]
+layer = 10
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=272331067]
+position = Vector2(832, 371)
+texture_normal = ExtResource("1_6wx45")
+action = "jump"
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=931336825]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = -205.0
+offset_right = 193.0
+offset_bottom = -45.0
+grow_vertical = 0
+joystick_mode = 1
+action_left = &"move_left"
+action_right = &"move_right"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="." unique_id=504759807]
+position = Vector2(620, 465)
+texture_normal = ExtResource("1_6wx45")
+action = "slide"
