@@ -7,6 +7,11 @@ const AIR_ACCEL = 0.5
 const AIR_FRICTION = 0.01
 const SLIDE_GRAVITY = 500.0
 
+func _ready() -> void:
+	reset_physics_interpolation()
+	$Camera2D.reset_physics_interpolation()
+	$Camera2D.force_update_scroll()
+	
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
