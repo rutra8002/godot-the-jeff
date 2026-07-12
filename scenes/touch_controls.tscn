@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://beep8ymejq0me"]
 
 [ext_resource type="Texture2D" uid="uid://bkp4xovxixr4j" path="res://icon.svg" id="1_6wx45"]
+[ext_resource type="Script" uid="uid://3l65rv38so6g" path="res://scripts/touch_controls.gd" id="1_n26gd"]
 
 [node name="TouchControls" type="CanvasLayer" unique_id=1234611365]
 layer = 10
+script = ExtResource("1_n26gd")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=272331067]
 position = Vector2(832, 371)
