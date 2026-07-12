@@ -3,8 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://bwrln0m16aey5" path="res://gameobjects/player.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://bkp4xovxixr4j" path="res://icon.svg" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://beep8ymejq0me" path="res://scenes/touch_controls.tscn" id="3_4wyf3"]
+[ext_resource type="Shader" uid="uid://dj6q4y84iqdhj" path="res://shaders/background.gdshader" id="4_k0juu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyf3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ndusb"]
+shader = ExtResource("4_k0juu")
 
 [node name="World" type="Node2D" unique_id=2042054106]
 
@@ -46,3 +50,19 @@ scale = Vector2(0.156, 0.156)
 texture = ExtResource("2_rwgxs")
 
 [node name="TouchControls" parent="." unique_id=756979710 instance=ExtResource("3_4wyf3")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=612293116]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1148441750]
+material = SubResource("ShaderMaterial_ndusb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.032958984
+offset_top = 0.032958984
+offset_right = 0.032958984
+offset_bottom = 0.032958984
+grow_horizontal = 2
+grow_vertical = 2
