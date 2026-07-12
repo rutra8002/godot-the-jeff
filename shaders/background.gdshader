@@ -24,8 +24,10 @@ highp float fbm(highp vec2 p, highp float t, float octaveOffset) {
     highp float amplitude = 0.5;
     mat2 rot = mat2(vec2(0.80, 0.60), vec2(-0.60, 0.80));
     for (int i = 0; i < OCTAVES; i++) {
-        highp float drift = t * 0.05 * (float(i) - float(OCTAVES) * 0.5 + octaveOffset);
-        value += amplitude * valueNoise(p + drift);
+        highp float rate = 0.15 + 0.05 * float(i);
+        highp float phase = (float(i) + octaveOffset) * 2.4;
+        highp vec2 orbit = vec2(cos(t * rate + phase), sin(t * rate + phase)) * 0.6;
+        value += amplitude * valueNoise(p + orbit);
         p = rot * p * 2.0;
         amplitude *= 0.5;
     }
@@ -50,13 +52,12 @@ void fragment() {
 
     highp float f = fbm(uv + warp2, t, 0.0);
 
-    vec3 deepColor = vec3(0.1, 0.0, 0.0);
-    vec3 midColor = vec3(0.65, 0.25, 0.25);
-    vec3 lightColor = vec3(0.95, 0.55, 0.55);
+    vec3 deepColor = vec3(0.0, 0.0, 0.0);
+    vec3 midColor = vec3(0.25, 0.65, 0.25);
+    vec3 lightColor = vec3(0.95, 0.95, 0.55);
 
     vec3 color = mix(deepColor, midColor, smoothstep(0.1, 0.6, f));
     color = mix(color, lightColor, smoothstep(0.55, 0.95, f));
-    color = mix(color, lightColor, smoothstep(0.3, 1.4, length(warp1)) * 0.35);
 
     color *= (0.6 + 0.4 * f);
 
